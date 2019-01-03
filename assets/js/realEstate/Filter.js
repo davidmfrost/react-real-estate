@@ -16,7 +16,7 @@ export default class Filter extends Component {
           <option>Linthicum</option>
         </select>
         <select name="housetype" className="filters housetype">
-          <option>Rancher</option>
+          <option>Ranch</option>
         </select>
         <select name="bedrooms" className="filters bedrooms">
           <option>3 BR</option>

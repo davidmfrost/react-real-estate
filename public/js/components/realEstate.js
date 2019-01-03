@@ -67,7 +67,7 @@ var Filter = function (_Component) {
             _react2.default.createElement(
               'option',
               null,
-              'Rancher'
+              'Ranch'
             )
           ),
           _react2.default.createElement(
