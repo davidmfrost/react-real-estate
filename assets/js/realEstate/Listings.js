@@ -6,6 +6,51 @@ export default class Header extends Component {
     this.state = {
       name: 'Joe'
     }
+    this.loopListings = this.loopListings.bind(this)
+  }
+  loopListings () {
+    var {listingsData} = this.props
+
+    return listingsData.map((listing, index) => {
+      return (<div className="col-md-3" key={index}>
+        <div className="listing">
+        <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`}}>
+          <span className="address">{listing.address}</span>
+          <div className="details">
+            <div className="col-md-3">
+              <div className="user-img"></div>
+            </div>
+
+            <div className="col-md-9">
+              <div className="user-details">
+                <span className="user-name">Nina Smith</span>
+                <span className="post-date">01/01/2019</span>
+              </div>
+              <div className="listing-details">
+                <div className="floor-space">
+                  <i className="far fa-square" aria-hidden="true"></i>
+                  <span>2500 ft&sup2;</span>
+                </div>
+                <div className="bedrooms">
+                  <i className="fas fa-bed" aria-hidden="true"></i>
+                  <span>{listing.bedrooms} bedrooms</span>
+                </div>
+              </div>
+
+              <div className="view-btn">
+                View Listing
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div className="bottom-info">
+          <span className="price">{listing.price} </span>
+          <span className="location"><i className="fas fa-map-marker-alt" aria-hidden="true"></i> {listing.city}, {listing.state}</span>
+        </div>
+        </div>
+      </div>)
+    })
   }
 
   render () {
@@ -29,158 +74,7 @@ export default class Header extends Component {
       </section>
 
       <section className="listings-results">
-        <div className="col-md-3">
-          <div className="listing">
-          <div className="listing-img">
-            <span className="address">537 Paper Street</span>
-            <div className="details">
-              <div className="col-md-3">
-                <div className="user-img"></div>
-              </div>
-
-              <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Nina Smith</span>
-                  <span className="post-date">01/01/2019</span>
-                </div>
-                <div className="listing-details">
-                  <div className="floor-space">
-                    <i className="far fa-square" aria-hidden="true"></i>
-                    <span>2500 ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    <i className="fas fa-bed" aria-hidden="true"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className="view-btn">
-                  View Listing
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="bottom-info">
-            <span className="price">$2000 / month </span>
-            <span className="location"><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Linthicum, MD</span>
-          </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="listing">
-          <div className="listing-img">
-            <span className="address">537 Paper Street</span>
-            <div className="details">
-              <div className="col-md-3">
-                <div className="user-img"></div>
-              </div>
-
-              <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Nina Smith</span>
-                  <span className="post-date">01/01/2019</span>
-                </div>
-                <div className="listing-details">
-                  <div className="floor-space">
-                    <i className="far fa-square" aria-hidden="true"></i>
-                    <span>2500 ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    <i className="fas fa-bed" aria-hidden="true"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className="view-btn">
-                  View Listing
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="bottom-info">
-            <span className="price">$2000 / month </span>
-            <span className="location"><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Linthicum, MD</span>
-          </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="listing">
-          <div className="listing-img">
-            <span className="address">537 Paper Street</span>
-            <div className="details">
-              <div className="col-md-3">
-                <div className="user-img"></div>
-              </div>
-
-              <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Nina Smith</span>
-                  <span className="post-date">01/01/2019</span>
-                </div>
-                <div className="listing-details">
-                  <div className="floor-space">
-                    <i className="far fa-square" aria-hidden="true"></i>
-                    <span>2500 ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    <i className="fas fa-bed" aria-hidden="true"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className="view-btn">
-                  View Listing
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="bottom-info">
-            <span className="price">$2000 / month </span>
-            <span className="location"><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Linthicum, MD</span>
-          </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="listing">
-          <div className="listing-img">
-            <span className="address">537 Paper Street</span>
-            <div className="details">
-              <div className="col-md-3">
-                <div className="user-img"></div>
-              </div>
-
-              <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Nina Smith</span>
-                  <span className="post-date">01/01/2019</span>
-                </div>
-                <div className="listing-details">
-                  <div className="floor-space">
-                    <i className="far fa-square" aria-hidden="true"></i>
-                    <span>2500 ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    <i className="fas fa-bed" aria-hidden="true"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className="view-btn">
-                  View Listing
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="bottom-info">
-            <span className="price">$2000 / month </span>
-            <span className="location"><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Linthicum, MD</span>
-          </div>
-          </div>
-        </div>
+        {this.loopListings()}
       </section>
 
       <section id="pagination">
