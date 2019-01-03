@@ -1,4 +1,3 @@
-
 const path = require('path');
 const webpack = require('webpack')
 
@@ -8,8 +7,8 @@ const VENDOR_LIBS = [
 
 module.exports = {
   entry: {
-    firstComp: './assets/js/firstComp/firstComp.js',
-    regularJS: './assets/js/regularJS.js',
+    realEstate: './assets/js/realEstate/realEstate.js',
+    // regularJS: './assets/js/regularJS.js',
     vendor: VENDOR_LIBS
   },
   output: { filename: '[name].js',
