@@ -1,15 +1,19 @@
-import React, { Component} from 'react'
+import React, {
+  Component
+} from 'react'
 
 export default class Header extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       name: 'Joe'
     }
     this.loopListings = this.loopListings.bind(this)
   }
-  loopListings () {
-    var {listingsData} = this.props
+  loopListings() {
+    var {
+      listingsData
+    } = this.props
 
     return listingsData.map((listing, index) => {
       return (<div className="col-md-3" key={index}>
@@ -53,7 +57,7 @@ export default class Header extends Component {
     })
   }
 
-  render () {
+  render() {
     return (<section id="listings">
       <section className="search-area">
         <input type="text" name="search" />

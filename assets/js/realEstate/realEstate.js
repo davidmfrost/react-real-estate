@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Header from './Header.js'
 import Filter from './Filter.js'
@@ -6,20 +6,41 @@ import Listings from './Listings.js'
 import listingsData from './data/listingsData.js'
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
-      name: 'Joe',
-      listingsData
+      name: 'Property Data',
+      listingsData,
+      min_price: 0,
+      max_price: 1000000,
+      min_floor_space: 0,
+      max_floor_space: 10000,
+      elevator: false,
+      swimming_pool: false,
+      finished_basement: false,
+      gym: false
+
     }
+
+    this.change = this.change.bind(this)
   }
 
-  render () {
-    console.log(this.state)
+  change(event) {
+    var name = event.target.name
+    var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
+
+    this.setState({
+      [name]: value
+    }, () => {
+      console.log(this.state)
+    })
+  }
+
+  render() {
     return (<div>
       <Header />
         <section id="content-area">
-          <Filter />
+          <Filter change={this.change} globalState={this.state}/>
           <Listings listingsData={this.state.listingsData}/>
         </section>
     </div>)
