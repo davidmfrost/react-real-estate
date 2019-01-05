@@ -3,7 +3,7 @@ var listingsdata = [
     address: '537 Paper Street',
     city: 'Accokeek',
     state: 'MD',
-    rooms: 4,
+    bedrooms: 4,
     price: 300000,
     floorSpace: 2500,
     extras: [
@@ -17,7 +17,7 @@ var listingsdata = [
     address: '3175 Paper Road',
     city: 'Baltimore',
     state: 'MD',
-    rooms: 6,
+    bedrooms: 6,
     price: 405800,
     floorSpace: 6300,
     extras: [
@@ -31,7 +31,7 @@ var listingsdata = [
     address: '1537 Paper Way',
     city: 'Rockville',
     state: 'MD',
-    rooms: 3,
+    bedrooms: 3,
     price: 640200,
     floorSpace: 2000,
     extras: [
@@ -45,7 +45,7 @@ var listingsdata = [
     address: '420 Paper Street',
     city: 'Baltimore',
     state: 'MD',
-    rooms: 6,
+    bedrooms: 6,
     price: 390500,
     floorSpace: 4500,
     extras: [
@@ -58,7 +58,7 @@ var listingsdata = [
     address: '1537 Paper Street',
     city: 'Silver Spring',
     state: 'MD',
-    rooms: 3,
+    bedrooms: 3,
     price: 503000,
     floorSpace: 1500,
     extras: [
@@ -73,7 +73,7 @@ var listingsdata = [
     address: '375 Parchment Street',
     city: 'Linthicum',
     state: 'MD',
-    rooms: 4,
+    bedrooms: 4,
     price: 502000,
     floorSpace: 3700,
     extras: [
@@ -86,7 +86,7 @@ var listingsdata = [
     address: '735 Paper Way',
     city: 'Bowie',
     state: 'MD',
-    rooms: 5,
+    bedrooms: 5,
     price: 316700,
     floorSpace: 1900,
     extras: [
@@ -99,7 +99,7 @@ var listingsdata = [
     address: '5370 Paper Road',
     city: 'Columbia',
     state: 'MD',
-    rooms: 4,
+    bedrooms: 4,
     price: 370210,
     floorSpace: 2000,
     extras: [

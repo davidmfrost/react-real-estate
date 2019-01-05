@@ -15,6 +15,10 @@ export default class Header extends Component {
       listingsData
     } = this.props
 
+    if(listingsData == undefined || listingsData.length == 0) {
+      return "Sorry your filter did not match any listing"
+    }
+
     return listingsData.map((listing, index) => {
       return (<div className="col-md-3" key={index}>
         <div className="listing">
@@ -33,7 +37,7 @@ export default class Header extends Component {
               <div className="listing-details">
                 <div className="floor-space">
                   <i className="far fa-square" aria-hidden="true"></i>
-                  <span>2500 ft&sup2;</span>
+                  <span>{listing.floorSpace} ft&sup2;</span>
                 </div>
                 <div className="bedrooms">
                   <i className="fas fa-bed" aria-hidden="true"></i>
