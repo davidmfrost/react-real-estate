@@ -1,41 +1,84 @@
-import React, { Component } from 'react'
+import React, {
+  Component
+} from 'react'
 
 export default class Filter extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       name: 'Joe'
     }
+    this.cities = this.cities.bind(this)
+    this.homeTypes = this.homeTypes.bind(this)
+    this.bedrooms = this.bedrooms.bind(this)
   }
 
-  render () {
+  componentWillMount() {
+    this.props.populateAction()
+  }
+
+  cities() {
+    if (this.props.globalState.populateFormsData.cities != undefined) {
+      var {
+        cities
+      } = this.props.globalState.populateFormsData
+
+      return cities.map((item) => {
+        return (
+          <option key={item} value={item}>{item}</option>
+        )
+      })
+    }
+  }
+
+  homeTypes() {
+    if (this.props.globalState.populateFormsData.homeTypes != undefined) {
+      var {
+        homeTypes
+      } = this.props.globalState.populateFormsData
+
+      return homeTypes.map((item) => {
+        return (
+          <option key={item} value={item}>{item}</option>
+        )
+      })
+    }
+
+  }
+
+  bedrooms() {
+    if (this.props.globalState.populateFormsData.bedrooms != undefined) {
+      var {
+        bedrooms
+      } = this.props.globalState.populateFormsData
+
+      return bedrooms.map((item) => {
+        return (
+          <option key={item} value={item}>{item}+ BR</option>
+        )
+      })
+    }
+
+  }
+
+  render() {
     return (<section id="filter">
      <div className="inside">
        <h4>Filter</h4>
-        <select name="neighborhood" className="filters neighborhood" onChange={this.props.change}>
-          <option value="Linthicum">Linthicum</option>
-          <option value="Baltimore">Baltimore</option>
-          <option value="Accokeek">Accokeek</option>
-          <option value="Rockville">Rockville</option>
-          <option value="Silver Spring">Silver Spring</option>
-          <option value="Bowie">Bowie</option>
-          <option value="Columbia">Columbia</option>
+        <label htmlFor="city">City</label>
+        <select name="city" className="filters city" onChange={this.props.change}>
+          <option value="All">All</option>
+            {this.cities()}
         </select>
-        <select name="housetype" className="filters housetype" onChange={this.props.change}>
-          <option value="Ranch">Ranch</option>
-          <option value="Neo-eclectic">Neo-eclectic</option>
-          <option value="Prairie style">Prairie style</option>
-          <option value="Cape Cod">Cape Cod</option>
-          <option value="Split Foyer">Split Foyer</option>
-          <option value="Split Foyer">Shingle style</option>
+        <label htmlFor="homeType">Home Type</label>
+        <select name="homeType" className="filters homeType" onChange={this.props.change}>
+          <option value="All">All Homes</option>
+            {this.homeTypes()}
         </select>
+        <label htmlFor="bedrooms">Bedrooms</label>
         <select name="bedrooms" className="filters bedrooms" onChange={this.props.change}>
-          <option value="1">1 BR</option>
-          <option value="2">2 BR</option>
-          <option value="3">3 BR</option>
-          <option value="4">4 BR</option>
-          <option value="5">5 BR</option>
-          <option value="6">6 BR</option>
+          <option value="0">0+ BR</option>
+            {this.bedrooms()}
         </select>
         <div className="filters price">
           <span className="title">Price</span>
