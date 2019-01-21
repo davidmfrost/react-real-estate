@@ -111,7 +111,7 @@ export default class Header extends Component {
       </section>
 
       <section className="sortby-area">
-        <div className="results">390 results found</div>
+        <div className="results">{this.props.globalState.filteredData.length} results found</div>
         <div className="sort-options">
           <select name="sortby" className="sortby" onChange={this.props.change}>
             <option value="price-dsc">Lowest Price</option>
@@ -125,19 +125,23 @@ export default class Header extends Component {
       </section>
 
       <section className="listings-results">
-        {this.loopListings()}
+        <div className="row">
+          {this.loopListings()}
+        </div>
       </section>
 
       <section id="pagination">
-        <ul className="pages">
-          <li>Prev</li>
-          <li className="active">1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>Next</li>
-        </ul>
+        <div className="row">
+          <ul className="pages">
+            <li>Prev</li>
+            <li className="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>Next</li>
+          </ul>
+        </div>
       </section>
     </section>)
   }
